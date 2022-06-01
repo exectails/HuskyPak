@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CAAA2F34-3F42-4169-9C93-EDDD9DA0EEED}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>HuskyPak</RootNamespace>
+    <AssemblyName>HuskyPak</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DotNetZip\CommonSrc\CRC32.cs" />
+    <Compile Include="DotNetZip\Zlib\Deflate.cs" />
+    <Compile Include="DotNetZip\Zlib\DeflateStream.cs" />
+    <Compile Include="DotNetZip\Zlib\GZipStream.cs" />
+    <Compile Include="DotNetZip\Zlib\Inflate.cs" />
+    <Compile Include="DotNetZip\Zlib\InfTree.cs" />
+    <Compile Include="DotNetZip\Zlib\ParallelDeflateOutputStream.cs" />
+    <Compile Include="DotNetZip\Zlib\Tree.cs" />
+    <Compile Include="DotNetZip\Zlib\Zlib.cs" />
+    <Compile Include="DotNetZip\Zlib\ZlibBaseStream.cs" />
+    <Compile Include="DotNetZip\Zlib\ZlibCodec.cs" />
+    <Compile Include="DotNetZip\Zlib\ZlibConstants.cs" />
+    <Compile Include="DotNetZip\Zlib\ZlibStream.cs" />
+    <Compile Include="PakFileEntry.cs" />
+    <Compile Include="PakStream.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DotNetZip\Zlib\LICENSE.jzlib.txt" />
+    <Content Include="DotNetZip\Zlib\License.zlib.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
